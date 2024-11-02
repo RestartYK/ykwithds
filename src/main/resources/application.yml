@@ -2,6 +2,21 @@ spring:
   application:
     name: ykwithds
 
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ykwithds?useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 1234
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
 server:
   port: 8080
 
@@ -22,4 +37,4 @@ springdoc:
     doc-expansion: none
   cache:
     disabled: true
-  model-and-view-allowed: true    
+  model-and-view-allowed: true
